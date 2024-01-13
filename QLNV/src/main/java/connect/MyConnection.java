@@ -16,7 +16,7 @@ public class MyConnection {
                 conn = DriverManager.getConnection(dbURL, userName, password);
             }
         } catch (Exception e) {
-
+            System.out.println("Hê Lô");
         }
         return conn;
     }
