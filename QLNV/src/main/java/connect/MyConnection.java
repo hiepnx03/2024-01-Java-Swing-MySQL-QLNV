@@ -4,12 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class MyConnection {
-    private String dbURL = "jdbc:mysql://localhost:3306/java-swing-qlnv-2024-01";
-    private String userName = "root";
-    private String password = "";
-    private Connection conn = null;
+    private static String dbURL = "jdbc:mysql://localhost:3306/java-swing-qlnv-2024-01";
+    private static String userName = "root";
+    private static String password = "";
+    private static Connection conn = null;
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
         try {
             if (conn == null) {
                 Class.forName("com.mysql.cj.jdbc.Driver");
