@@ -25,4 +25,19 @@ public class UserController {
             return false;
         }
     }
+
+    public static boolean registerUser(User user) {
+        try (Connection connection = MyConnection.getConnection()) {
+            String query = "INSERT INTO User (Username, Password) VALUES (?, ?)";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, user.getUsername());
+                preparedStatement.setString(2, user.getPassword());
+                int rowsAffected = preparedStatement.executeUpdate();
+                return rowsAffected > 0;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

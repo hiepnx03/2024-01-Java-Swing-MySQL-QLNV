@@ -15,6 +15,8 @@ public class FormMain extends javax.swing.JFrame {
      */
     public FormMain() {
         initComponents();
+        setLocationRelativeTo(null);  // hiển thị ở giữa màn hình
+
     }
 
     /**
