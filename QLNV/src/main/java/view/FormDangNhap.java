@@ -138,37 +138,18 @@ public class FormDangNhap extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-//        String username = tbUsername.getText();
-//        String password = tbPassword.getText();
-//        MyConnection myConnection = new MyConnection();
-//        Connection conn = myConnection.getConnection();
-//        try {
-//            // Sử dụng PreparedStatement để tránh SQL injection
-//            String query = "SELECT * FROM User Where Username =? AND Password =?";
-//            PreparedStatement preparedStatement = conn.prepareStatement(query);
-//            preparedStatement.setString(1, username);
-//            preparedStatement.setString(2, password);
-//            ResultSet resultSet = preparedStatement.executeQuery();
-//            if (resultSet.next()) {
-//                FormMain formMain = new FormMain();
-//                formMain.setVisible(true);
-//                this.dispose(); // đóng form đăng nhập
-//            } else {
-//                JOptionPane.showMessageDialog(this, "Đăng nhập thất bại, vui lòng kiểm tra tên người dùng và mật khẩu.");
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            JOptionPane.showMessageDialog(this, "Lỗi kết nối cơ sở dữ liệu");
-//        }
         String usernamelogin = tbUsername.getText();
         String passwordlogin = tbPassword.getText();
-        User user = new User(0,usernamelogin,passwordlogin);
-        if (UserController.authenticateUser(user)){
+        User user = new User(0, usernamelogin, passwordlogin);
+        if (UserController.authenticateUser(user)) {
             FormMain formMain = new FormMain();
             formMain.setVisible(true);
             this.dispose(); // đóng trang login
-        }else {
-            JOptionPane.showMessageDialog(this,"đăng nhập thất bại");
+        } else {
+            JOptionPane.showMessageDialog(this, "đăng nhập thất bại");
+            // Reset text fields after unsuccessful login
+            tbUsername.setText("");
+            tbPassword.setText("");
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
