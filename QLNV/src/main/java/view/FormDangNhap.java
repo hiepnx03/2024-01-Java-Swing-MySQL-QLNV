@@ -46,10 +46,13 @@ public class FormDangNhap extends javax.swing.JFrame {
         btnDangKy = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 153, 153));
+
+        jPanel1.setBackground(new java.awt.Color(255, 153, 153));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("QUẢN LÝ NHÂN VIÊN");
+        jLabel1.setText("ĐĂNG NHẬP QUẢN LÝ NHÂN VIÊN");
 
         jLabel2.setText("Username :");
 
@@ -62,6 +65,7 @@ public class FormDangNhap extends javax.swing.JFrame {
             }
         });
 
+        btnCancel.setBackground(new java.awt.Color(153, 102, 0));
         btnCancel.setText("Cancel");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

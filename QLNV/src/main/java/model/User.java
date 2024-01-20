@@ -35,7 +35,7 @@ public class User {
         Password = password;
     }
 
-    public User() {
+    public User(String username, String currentPassword) {
     }
 
 }

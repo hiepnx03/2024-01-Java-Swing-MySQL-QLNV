@@ -26,6 +26,7 @@ public class UserController {
         }
     }
 
+
     public static boolean registerUser(User user) {
         try (Connection connection = MyConnection.getConnection()) {
             String query = "INSERT INTO User (Username, Password) VALUES (?, ?)";
@@ -39,5 +40,24 @@ public class UserController {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public static boolean changePassword(User user, String newPassword) {
+        try (Connection connection = MyConnection.getConnection()) {
+            // Check if the current username and password are correct
+            if (authenticateUser(user)) {
+                // Update the password
+                String updateQuery = "UPDATE User SET Password=? WHERE Username=?";
+                try (PreparedStatement updateStatement = connection.prepareStatement(updateQuery)) {
+                    updateStatement.setString(1, newPassword);
+                    updateStatement.setString(2, user.getUsername());
+                    int rowsAffected = updateStatement.executeUpdate();
+                    return rowsAffected > 0;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
