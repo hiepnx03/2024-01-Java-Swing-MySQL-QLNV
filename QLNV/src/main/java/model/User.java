@@ -1,41 +1,27 @@
 package model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "User")
 public class User {
-    private int Id;
-    private String Username;
-    private String Password;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
 
-    public int getId() {
-        return Id;
-    }
+    @Column(name = "username")
+    private String username;
 
-    public void setId(int id) {
-        Id = id;
-    }
-
-    public String getUsername() {
-        return Username;
-    }
-
-    public void setUsername(String username) {
-        Username = username;
-    }
-
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String password) {
-        Password = password;
-    }
-
-    public User(int id, String username, String password) {
-        Id = id;
-        Username = username;
-        Password = password;
-    }
-
-    public User(String username, String currentPassword) {
-    }
-
+    @Column(name = "password")
+    private String password;
 }

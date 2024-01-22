@@ -298,7 +298,7 @@ public class FormMain extends javax.swing.JFrame {
         }
 
         // Authenticate user
-        User user = new User(0,username, currentPassword);
+        User user = new User(0,username,currentPassword);
         if (!UserController.authenticateUser(user)) {
             JOptionPane.showMessageDialog(this, "Tên đăng nhập hoặc mật khẩu cũ không đúng.", "Lỗi", JOptionPane.ERROR_MESSAGE);
             return;

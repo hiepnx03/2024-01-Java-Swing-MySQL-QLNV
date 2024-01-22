@@ -156,7 +156,7 @@ public class FormDangNhap extends javax.swing.JFrame {
         // TODO add your handling code here:
         String usernamelogin = tbUsername.getText();
         String passwordlogin = tbPassword.getText();
-        User user = new User(0, usernamelogin, passwordlogin);
+        User user = new User(0,usernamelogin,passwordlogin);
         if (UserController.authenticateUser(user)) {
             FormMain formMain = new FormMain();
             formMain.setVisible(true);
