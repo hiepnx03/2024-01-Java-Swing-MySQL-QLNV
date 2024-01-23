@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class MyConnection {
     private static String dbURL = "jdbc:mysql://localhost:3306/java-swing-qlnv-2024-01";
     private static String userName = "root";
-    private static String password = "";
+    private static String password = "12345";
 
     public static Connection getConnection() {
         Connection conn = null;
