@@ -45,10 +45,10 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Component id="jPannelDangXuat" pref="1887" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPannelDangXuat" pref="1908" max="32767" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -138,7 +138,7 @@
                                           </Group>
                                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jCalendarNgayVaoLam" alignment="0" pref="285" max="32767" attributes="0"/>
+                                              <Component id="jCalendarNgayVaoLam" alignment="0" pref="280" max="32767" attributes="0"/>
                                               <Component id="tbSoDienThoai" max="32767" attributes="0"/>
                                               <Component id="jComboBoxChucVu" max="32767" attributes="0"/>
                                           </Group>
@@ -147,12 +147,12 @@
                                               <Group type="102" attributes="0">
                                                   <Component id="jLabel16" min="-2" pref="77" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="tbDiaChi" pref="273" max="32767" attributes="0"/>
+                                                  <Component id="tbDiaChi" pref="267" max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="102" attributes="0">
                                                   <Component id="jLabel17" min="-2" pref="77" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jScrollPane2" pref="273" max="32767" attributes="0"/>
+                                                  <Component id="jScrollPane2" pref="267" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -162,7 +162,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="btnXoaNhanVien" alignment="1" max="32767" attributes="0"/>
                                       <Component id="btnSuaNhanVien" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="btnThemNhanVien" alignment="1" pref="262" max="32767" attributes="0"/>
+                                      <Component id="btnThemNhanVien" alignment="1" pref="252" max="32767" attributes="0"/>
                                       <Component id="btnLamTrong" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -432,11 +432,12 @@
                 <Component class="javax.swing.JComboBox" name="jComboBoxChucVu">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
+                      <StringArray count="5">
                         <StringItem index="0" value="K&#x1ebf; To&#xe1;n"/>
                         <StringItem index="1" value="Thu Ng&#xe2;n"/>
                         <StringItem index="2" value="B&#x1ea3;o V&#x1ec7;"/>
                         <StringItem index="3" value="Gi&#xe1;m &#x110;&#x1ed1;c"/>
+                        <StringItem index="4" value="Null"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -566,7 +567,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1509" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1488" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -668,7 +669,7 @@
                                       <Component id="tbNhapUsername" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btnThayDoiMatKhau" pref="708" max="32767" attributes="0"/>
+                                  <Component id="btnThayDoiMatKhau" pref="687" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -837,7 +838,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel1" pref="1485" max="32767" attributes="0"/>
+                          <Component id="jLabel1" pref="1464" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -884,7 +885,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="1509" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="1488" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">

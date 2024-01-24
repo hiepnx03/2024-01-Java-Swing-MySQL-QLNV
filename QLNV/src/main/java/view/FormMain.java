@@ -184,7 +184,7 @@ public class FormMain extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel13.setText("Chức vụ");
 
-        jComboBoxChucVu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kế Toán", "Thu Ngân", "Bảo Vệ", "Giám Đốc" }));
+        jComboBoxChucVu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kế Toán", "Thu Ngân", "Bảo Vệ", "Giám Đốc", "Null" }));
         jComboBoxChucVu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxChucVuActionPerformed(evt);
@@ -276,7 +276,7 @@ public class FormMain extends javax.swing.JFrame {
                                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanelNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCalendarNgayVaoLam, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                                    .addComponent(jCalendarNgayVaoLam, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                                     .addComponent(tbSoDienThoai)
                                     .addComponent(jComboBoxChucVu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
@@ -284,17 +284,17 @@ public class FormMain extends javax.swing.JFrame {
                                     .addGroup(jPanelNhanVienLayout.createSequentialGroup()
                                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(tbDiaChi, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE))
+                                        .addComponent(tbDiaChi, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE))
                                     .addGroup(jPanelNhanVienLayout.createSequentialGroup()
                                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE))))
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE))))
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(28, 28, 28)
                         .addGroup(jPanelNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnXoaNhanVien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSuaNhanVien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnThemNhanVien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                            .addComponent(btnThemNhanVien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
                             .addComponent(btnLamTrong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
@@ -350,7 +350,7 @@ public class FormMain extends javax.swing.JFrame {
         jPanelChucVu.setLayout(jPanelChucVuLayout);
         jPanelChucVuLayout.setHorizontalGroup(
             jPanelChucVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1509, Short.MAX_VALUE)
+            .addGap(0, 1488, Short.MAX_VALUE)
         );
         jPanelChucVuLayout.setVerticalGroup(
             jPanelChucVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,7 +435,7 @@ public class FormMain extends javax.swing.JFrame {
                             .addComponent(jtbNhapPasswordMoi, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tbNhapUsername))
                         .addGap(18, 18, 18)
-                        .addComponent(btnThayDoiMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)))
+                        .addComponent(btnThayDoiMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -498,7 +498,7 @@ public class FormMain extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1485, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1464, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -537,7 +537,7 @@ public class FormMain extends javax.swing.JFrame {
         jPanelDangXuat.setLayout(jPanelDangXuatLayout);
         jPanelDangXuatLayout.setHorizontalGroup(
             jPanelDangXuatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1509, Short.MAX_VALUE)
+            .addGap(0, 1488, Short.MAX_VALUE)
         );
         jPanelDangXuatLayout.setVerticalGroup(
             jPanelDangXuatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -551,9 +551,9 @@ public class FormMain extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPannelDangXuat, javax.swing.GroupLayout.DEFAULT_SIZE, 1908, Short.MAX_VALUE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(jPannelDangXuat, javax.swing.GroupLayout.DEFAULT_SIZE, 1887, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -721,7 +721,7 @@ public class FormMain extends javax.swing.JFrame {
         tbDiaChi.setText("");
         tbSoDienThoai.setText("");
         radNam.setSelected(true); // Assuming radNam and radNu are radio buttons
-        jComboBoxChucVu.setSelectedIndex(0);
+        jComboBoxChucVu.setSelectedIndex(4);
         jTextAreaChuThich.setText("");
     }
 
@@ -773,6 +773,13 @@ public class FormMain extends javax.swing.JFrame {
 
     private void btnLamTrongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamTrongActionPerformed
         // TODO add your handling code here:
+        tbMaNhanVien.setText("");
+        tbTenNhanVien.setText("");
+        tbDiaChi.setText("");
+        tbSoDienThoai.setText("");
+        radNam.setSelected(true); // Assuming radNam and radNu are radio buttons
+        jComboBoxChucVu.setSelectedIndex(4);
+        jTextAreaChuThich.setText("");
     }//GEN-LAST:event_btnLamTrongActionPerformed
 
     private void tableNhanVienComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tableNhanVienComponentShown
