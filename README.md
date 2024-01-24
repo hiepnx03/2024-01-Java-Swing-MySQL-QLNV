@@ -1,3 +1,4 @@
+# do tôi dùng cái thư viện calendar nó mới hiện ngôn ngữ HTML nhiều hơn là Java
 # 2024-01-14 Bắt Đầu Dự Án Java-Swing-MySQL-QLNV
 NGÀY BẮT ĐẦU 2024-01-14-Java-Swing-MySQL-QLNV dự án quản lý nhân viên
 - Dự án này được nâng cấp lên từ Java-Swing năm 2023
