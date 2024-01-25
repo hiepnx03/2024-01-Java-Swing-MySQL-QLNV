@@ -8,3 +8,4 @@ NGÀY BẮT ĐẦU 2024-01-14-Java-Swing-MySQL-QLNV dự án quản lý nhân vi
 - tìm kiếm icon , chỉnh sửa pixel (canva)
 - tìm hiểu giao diện có thể nhấn để chuyển panel , chỉnh kích thước phù hợp với màn hình FULL HD 1920 x 1080 
 # 2024-01-24 Giao diện Nhân viên , thêm , xóa , làm trống 
+# 2024-01-25 Cập nhật Nhân Viên , hiển thị bảng , sự kiện click chuột ,Giao diện Chấm Công   
