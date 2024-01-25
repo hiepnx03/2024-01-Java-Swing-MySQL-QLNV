@@ -370,7 +370,7 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="componentShown" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="tableNhanVienComponentShown"/>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableNhanVienMouseClicked"/>
                       </Events>
                     </Component>
                   </SubComponents>

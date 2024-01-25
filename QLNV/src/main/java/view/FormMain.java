@@ -10,6 +10,7 @@ import model.NhanVien;
 import model.User;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.sql.Date;
 import java.util.Arrays;
 import java.util.List;
@@ -25,7 +26,11 @@ public class FormMain extends javax.swing.JFrame {
     public FormMain() {
         initComponents();
         setLocationRelativeTo(null);  // hiển thị ở giữa màn hình
-
+        showNhanVienTable();
+    }
+    private void showNhanVienTable() {
+        DefaultTableModel model = NhanVienController.getAllNhanVienTableModel();
+        tableNhanVien.setModel(model);
     }
 
     /**
@@ -150,9 +155,9 @@ public class FormMain extends javax.swing.JFrame {
                 "MaNhanVien", "TenNhanVien", "NgaySinh", "GioiTinh", "ChucVu", "SoDienThoai", "NgayVaoLam", "DiaChi", "ChuThich"
             }
         ));
-        tableNhanVien.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentShown(java.awt.event.ComponentEvent evt) {
-                tableNhanVienComponentShown(evt);
+        tableNhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableNhanVienMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(tableNhanVien);
@@ -695,6 +700,7 @@ public class FormMain extends javax.swing.JFrame {
             // Clear the input fields if needed
             clearInputFields();
             JOptionPane.showMessageDialog(this, "Employee added successfully");
+            showNhanVienTable();
         } else {
             // Failed to add employee, you can display an error message or handle accordingly
             JOptionPane.showMessageDialog(this, "Failed to add employee. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -729,6 +735,56 @@ public class FormMain extends javax.swing.JFrame {
 
     private void btnSuaNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaNhanVienActionPerformed
         // TODO add your handling code here:
+        // Get the values from the input fields
+        String maNhanVienStr = tbMaNhanVien.getText();
+        String tenNhanVien = tbTenNhanVien.getText();
+        String diaChi = tbDiaChi.getText();
+        String soDienThoai = tbSoDienThoai.getText();
+        String gioiTinh = radNam.isSelected() ? "Nam" : "Nữ";
+        Date ngaySinh = jCalendarNgaySinh.getDate() != null ? new Date(jCalendarNgaySinh.getDate().getTime()) : null;
+        Date ngayVaoLam = jCalendarNgayVaoLam.getDate() != null ? new Date(jCalendarNgayVaoLam.getDate().getTime()) : null;
+        String chucVu = jComboBoxChucVu.getSelectedItem().toString();
+        String chuThich = jTextAreaChuThich.getText();
+
+        // Check if the employee ID is empty
+        if (maNhanVienStr.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter the employee ID to update.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Convert employee ID from string to integer
+        try {
+            int maNhanVien = Integer.parseInt(maNhanVienStr);
+
+            // Create a new NhanVien object with the retrieved values
+            NhanVien updatedNhanVien = new NhanVien();
+            updatedNhanVien.setMaNhanVien(maNhanVien);
+            updatedNhanVien.setTenNhanVien(tenNhanVien);
+            updatedNhanVien.setDiaChi(diaChi);
+            updatedNhanVien.setSoDienThoai(soDienThoai);
+            updatedNhanVien.setGioiTinh(gioiTinh);
+            updatedNhanVien.setNgaySinh(ngaySinh);
+            updatedNhanVien.setNgayVaoLam(ngayVaoLam);
+            updatedNhanVien.setChucVu(chucVu);
+            updatedNhanVien.setChuThich(chuThich);
+
+            // Call the method to update the employee in the database
+            NhanVienController nhanVienController = new NhanVienController();
+            boolean success = nhanVienController.updateNhanVien(updatedNhanVien);
+
+            if (success) {
+                // Employee updated successfully
+                JOptionPane.showMessageDialog(this, "Employee updated successfully");
+                showNhanVienTable();
+                // Clear the input fields or update the UI if needed
+            } else {
+                // Failed to update employee
+                JOptionPane.showMessageDialog(this, "Failed to update employee. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (NumberFormatException e) {
+            // Handle if the employee ID is not a valid number
+            JOptionPane.showMessageDialog(this, "Invalid employee ID. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnSuaNhanVienActionPerformed
 
     private void btnXoaNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaNhanVienActionPerformed
@@ -758,6 +814,7 @@ public class FormMain extends javax.swing.JFrame {
                 if (success) {
                     // Xóa thành công
                     JOptionPane.showMessageDialog(this, "Employee deleted successfully");
+                    showNhanVienTable();
                     // Cập nhật giao diện hoặc thực hiện các công việc cần thiết sau khi xóa
                     // Ví dụ: clearInputFields() hoặc load lại danh sách nhân viên
                 } else {
@@ -782,11 +839,43 @@ public class FormMain extends javax.swing.JFrame {
         jTextAreaChuThich.setText("");
     }//GEN-LAST:event_btnLamTrongActionPerformed
 
-    private void tableNhanVienComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tableNhanVienComponentShown
+    private void tableNhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableNhanVienMouseClicked
         // TODO add your handling code here:
+        // Lấy chỉ số của dòng được chọn
+        int selectedRow = tableNhanVien.getSelectedRow();
 
+        // Kiểm tra xem có dòng nào được chọn không
+        if (selectedRow >= 0) {
+            // Lấy dữ liệu từ model của bảng
+            DefaultTableModel model = (DefaultTableModel) tableNhanVien.getModel();
 
-    }//GEN-LAST:event_tableNhanVienComponentShown
+            // Lấy dữ liệu từ dòng được chọn
+            int maNhanVien = (int) model.getValueAt(selectedRow, 0);
+            String tenNhanVien = (String) model.getValueAt(selectedRow, 1);
+            String diaChi = (String) model.getValueAt(selectedRow, 2);
+            String soDienThoai = (String) model.getValueAt(selectedRow, 3);
+            String gioiTinh = (String) model.getValueAt(selectedRow, 4);
+            Date ngaySinh = (Date) model.getValueAt(selectedRow, 5);
+            Date ngayVaoLam = (Date) model.getValueAt(selectedRow, 6);
+            String chucVu = (String) model.getValueAt(selectedRow, 7);
+            String chuThich = (String) model.getValueAt(selectedRow, 8);
+
+            // Hiển thị dữ liệu lên các ô textbox hoặc nơi khác trên giao diện
+            tbMaNhanVien.setText(String.valueOf(maNhanVien));
+            tbTenNhanVien.setText(tenNhanVien);
+            tbDiaChi.setText(diaChi);
+            tbSoDienThoai.setText(soDienThoai);
+            if (gioiTinh.equals("Nam")) {
+                radNam.setSelected(true);
+            } else {
+                radNu.setSelected(true);
+            }
+            jCalendarNgaySinh.setDate(ngaySinh);
+            jCalendarNgayVaoLam.setDate(ngayVaoLam);
+            jComboBoxChucVu.setSelectedItem(chucVu);
+            jTextAreaChuThich.setText(chuThich);
+        }
+    }//GEN-LAST:event_tableNhanVienMouseClicked
 
 
     /**

@@ -3,6 +3,7 @@ package controller;
 import connect.MyConnection;
 import model.NhanVien;
 
+import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -129,7 +130,7 @@ public class NhanVienController {
         }
     }
 
-    public List<NhanVien> getAllNhanVien() {
+    public static List<NhanVien> getAllNhanVien() {
         List<NhanVien> nhanVienList = new ArrayList<>();
         String sql = "SELECT * FROM nhanvien";
 
@@ -156,5 +157,37 @@ public class NhanVienController {
         }
 
         return nhanVienList;
+    }
+    public static DefaultTableModel getAllNhanVienTableModel() {
+        List<NhanVien> nhanVienList = getAllNhanVien();
+
+        // Tạo model cho JTable
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("MaNhanVien");
+        model.addColumn("TenNhanVien");
+        model.addColumn("DiaChi");
+        model.addColumn("SoDienThoai");
+        model.addColumn("GioiTinh");
+        model.addColumn("NgaySinh");
+        model.addColumn("NgayVaoLam");
+        model.addColumn("ChucVu");
+        model.addColumn("ChuThich");
+
+        // Đổ dữ liệu vào model
+        for (NhanVien nhanVien : nhanVienList) {
+            model.addRow(new Object[]{
+                    nhanVien.getMaNhanVien(),
+                    nhanVien.getTenNhanVien(),
+                    nhanVien.getDiaChi(),
+                    nhanVien.getSoDienThoai(),
+                    nhanVien.getGioiTinh(),
+                    nhanVien.getNgaySinh(),
+                    nhanVien.getNgayVaoLam(),
+                    nhanVien.getChucVu(),
+                    nhanVien.getChuThich()
+            });
+        }
+
+        return model;
     }
 }
